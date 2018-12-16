@@ -45,3 +45,4 @@ jobs:
         application: lazrbot
         deployment_group: lazrbot
         region: us-east-2
+        wait_until_deployed: true
