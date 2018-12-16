@@ -5,19 +5,19 @@ files:
     destination: /usr/local/bin
 permissions:
   - object: /
-     pattern: "**"
-     owner: ec2-user
-     group: ec2-user
+    pattern: "**"
+    owner: ec2-user
+    group: ec2-user
 hooks:
   AfterInstall:
-     - location: codedeploy-install
+     - location: lazrbot/codedeploy-install
        timeout: 5
        runas: ec2-user
   ApplicationStop:
-     - location: codedeploy-stop
+     - location: lazrbot/codedeploy-stop
        timeout: 5
        runas: ec2-user
   ApplicationStart:
-     - location: codedeploy-start
+     - location: lazrbot/codedeploy-start
        timeout: 5
        runas: ec2-user
