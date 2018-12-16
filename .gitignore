@@ -1,0 +1,7 @@
+auth.json
+*.pem
+*.iml
+node_modules/
+.idea/
+lazrbot
+upload/
