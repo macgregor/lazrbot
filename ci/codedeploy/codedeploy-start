@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-systemctl start lazrbot.service
+sudo systemctl start lazrbot.service
