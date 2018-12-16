@@ -23,10 +23,6 @@ jobs:
       name: "Build Project"
       install: bash $TRAVIS_BUILD_DIR/ci/build $TRAVIS_BUILD_DIR $DISCORD_AUTH_TOKEN
       script: skip
-    - stage: deploy
-      name: "Deploy to AWS"
-      install: skip
-      script: skip
       deploy:
       - provider: s3
         access_key_id: "$AWS_ACCESS_KEY"
@@ -35,6 +31,11 @@ jobs:
         skip_cleanup: true
         bucket: com.github.macgregor.deployments
         region: us-east-2
+    - stage: deploy
+      name: "Deploy to AWS"
+      install: skip
+      script: skip
+      skip_cleanup: true
       - provider: codedeploy
         access_key_id: "$AWS_ACCESS_KEY"
         secret_access_key: "$AWS_SECRET_KEY"
