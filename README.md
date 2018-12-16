@@ -13,7 +13,7 @@ npm install discord.io winston --save
 
 
 ## Run
-`node bot.js`
+`node lazrbot.js`
 
 
 ## Invite Bot to Server
@@ -21,5 +21,7 @@ npm install discord.io winston --save
 
 Note: the bot does not have to be up and running to invite
 
-## Amazon EC2
-Ports: TCP 443 (text), UDP 50000-65535 (voice)
+## Amazon EC2 CI/CD
+[Deployment Guide](https://medium.com/@itsdavidthai/comprehensive-aws-ec2-deployment-with-travisci-guide-7cafa9c754fc),
+though it glossed over some important things like the [appspec.yml](https://docs.aws.amazon.com/codedeploy/latest/userguide/application-revisions-appspec-file.html?icmpid=docs_acd_console) file
+Firewall Rules: TCP 443 (text), UDP 50000-65535 (voice)

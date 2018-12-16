@@ -1,0 +1,14 @@
+[Unit]
+Description=Lazrbot Discord Bot
+Wants=basic.target
+After=basic.target network.target syslog.target
+
+[Service]
+User=ec2-user
+Group=ec2-user
+Type=simple
+ExecStart=/usr/local/bin/lazrbot/lazrbot
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+APP_PROJECT_DIR=$1
+APP_BUILD_DIR="$1/build"
+AUTH_TOKEN=$2
+
+echo "{\"token\": \"$AUTH_TOKEN\"}" > $APP_PROJECT_DIR/auth.json
+mkdir -p $APP_BUILD_DIR/lazrbot && mkdir -p $APP_BUILD_DIR/upload
+node node_modules/pkg/lib-es5/bin.js lazrbot.js -t node10-linux-x64 --out-path $APP_BUILD_DIR/lazrbot
+cp -r $APP_PROJECT_DIR/ci/bin/* $APP_BUILD_DIR/lazrbot
+cd $APP_BUILD_DIR && zip -r lazrbot.zip lazrbot && mv lazrbot.zip $APP_BUILD_DIR/upload

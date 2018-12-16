@@ -1,0 +1,17 @@
+{
+  "name": "lazrbot",
+  "version": "0.0.1",
+  "description": "Custom bot for the Lazrcats discord server.",
+  "main": "lazrbot.js",
+  "author": "Matthew Stratton",
+  "dependencies": {
+    "discord.io": "github:woor/discord.io#gateway_v6",
+    "winston": "^2.4.4"
+  },
+  "devDependencies": {
+    "pkg": "^4.3.5"
+  },
+  "pkg": {
+    "scripts": "node_modules/*"
+  }
+}
