@@ -19,12 +19,11 @@ env:
   - CLOUDWATCH_REGION=us-east-1
   - APP_REGION=us-east-2
 stages:
-- build
 - deploy
 jobs:
   include:
-  - stage: build
-    name: Build Project
+  - stage: deploy
+    name: Build and Deploy to AWS
     install: bash $TRAVIS_BUILD_DIR/ci/build $TRAVIS_BUILD_DIR $DISCORD_AUTH_TOKEN $CLOUDWATCH_ACCESS_KEY_ID $CLOUDWATCH_SECRET_ACCESS_KEY $CLOUDWATCH_REGION
     script: skip
     deploy:
@@ -35,11 +34,6 @@ jobs:
       skip_cleanup: true
       bucket: com.github.macgregor.deployments
       region: "$APP_REGION"
-  - stage: deploy
-    name: Deploy to AWS
-    install: skip
-    script: skip
-    deploy:
     - provider: codedeploy
       access_key_id: "$AWS_ACCESS_KEY"
       secret_access_key: "$AWS_SECRET_KEY"
