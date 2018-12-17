@@ -6,8 +6,8 @@ APP_INSTALL_CONTAINER=$APP_BUILD_DIR/lazrbot
 APP_UPLOAD_DIR=$APP_BUILD_DIR/upload
 CODEDEPLOY_FILES=$APP_PROJECT_DIR/ci/codedeploy
 
-
-touch $APP_INSTALL_CONTAINER/.env
+mkdir -p $APP_INSTALL_CONTAINER && mkdir -p $APP_UPLOAD_DIR
+touch $APP_INSTALL_CONTAINER/.env || exit 1
 cat << EOF > $APP_INSTALL_CONTAINER/.env
 DISCORD_AUTH_TOKEN=$2
 CLOUDWATCH_ACCESS_KEY_ID=$3
@@ -15,7 +15,6 @@ CLOUDWATCH_SECRET_ACCESS_KEY=$4
 CLOUDWATCH_REGION=$5
 EOF
 
-mkdir -p $APP_INSTALL_CONTAINER && mkdir -p $APP_UPLOAD_DIR
-node node_modules/pkg/lib-es5/bin.js lazrbot.js -t node10-linux-x64 --out-path $APP_INSTALL_CONTAINER
+node node_modules/pkg/lib-es5/bin.js lazrbot.js -t node10-linux-x64 --out-path $APP_INSTALL_CONTAINER || exit 1
 cp -r $CODEDEPLOY_FILES/* $APP_INSTALL_CONTAINER && mv $APP_INSTALL_CONTAINER/appspec.yml $APP_BUILD_DIR
 cd $APP_BUILD_DIR && zip -r lazrbot.zip lazrbot appspec.yml && mv lazrbot.zip $APP_UPLOAD_DIR
