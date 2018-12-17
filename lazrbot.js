@@ -1,21 +1,54 @@
+require('dotenv').config()
 var Discord = require('discord.io');
-var logger = require('winston');
-var auth = require('./auth.json');
-// Configure logger settings
-logger.remove(logger.transports.Console);
-logger.add(logger.transports.Console, {
-    colorize: true
+var winston = require('winston');
+var CloudWatchTransport = require('winston-aws-cloudwatch');
+
+var NODE_ENV = process.env.NODE_ENV || 'development';
+
+// your centralized logger object
+let logger = winston.createLogger({
+    transports: [new winston.transports.Console({
+         format: winston.format.combine(
+            winston.format.colorize({ all: true }),
+            winston.format.printf(item => `${item.timestamp} [${item.level}] - ${item.message}`),
+            winston.format.timestamp({
+                format: 'YYYY-MM-DD HH:mm:ss'
+            }))
+        })
+    ],
+    format: winston.format.combine(
+         winston.format.timestamp({
+           format: 'YYYY-MM-DD HH:mm:ss'
+         })
+    ),
+    exitOnError: false
 });
+
 logger.level = 'debug';
+var config = {
+  logGroupName: 'lazrbot-logs',
+  logStreamName: NODE_ENV,
+  createLogGroup: false,
+  createLogStream: true,
+  submissionInterval: 5000,
+  submissionRetryCount: 3,
+  awsConfig: {
+    accessKeyId: process.env.CLOUDWATCH_ACCESS_KEY_ID,
+    secretAccessKey: process.env.CLOUDWATCH_SECRET_ACCESS_KEY,
+    region: process.env.CLOUDWATCH_REGION
+  }
+}
+
+if (NODE_ENV != 'development') logger.add(new CloudWatchTransport(config));
+
 // Initialize Discord Bot
 var bot = new Discord.Client({
-   token: auth.token,
+   token: process.env.DISCORD_AUTH_TOKEN,
    autorun: true
 });
 bot.on('ready', function (evt) {
     logger.info('Connected');
-    logger.info('Logged in as: ');
-    logger.info(bot.username + ' - (' + bot.id + ')');
+    logger.info('Logged in as: ' + bot.username + ' - (' + bot.id + ')');
 });
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command

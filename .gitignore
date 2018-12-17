@@ -6,3 +6,4 @@ node_modules/
 lazrbot
 upload/
 *.ignore
+.env

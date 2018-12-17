@@ -2,10 +2,20 @@
 
 APP_PROJECT_DIR=$1
 APP_BUILD_DIR="$1/build"
-AUTH_TOKEN=$2
+APP_INSTALL_CONTAINER=$APP_BUILD_DIR/lazrbot
+APP_UPLOAD_DIR=$APP_BUILD_DIR/upload
+CODEDEPLOY_FILES=$APP_PROJECT_DIR/ci/codedeploy
 
-echo "{\"token\": \"$AUTH_TOKEN\"}" > $APP_PROJECT_DIR/auth.json
-mkdir -p $APP_BUILD_DIR/lazrbot && mkdir -p $APP_BUILD_DIR/upload
-node node_modules/pkg/lib-es5/bin.js lazrbot.js -t node10-linux-x64 --out-path $APP_BUILD_DIR/lazrbot
-cp -r $APP_PROJECT_DIR/ci/codedeploy/* $APP_BUILD_DIR/lazrbot && mv $APP_BUILD_DIR/lazrbot/appspec.yml $APP_BUILD_DIR
-cd $APP_BUILD_DIR && zip -r lazrbot.zip lazrbot appspec.yml && mv lazrbot.zip $APP_BUILD_DIR/upload
+
+touch $APP_INSTALL_CONTAINER/.env
+cat << EOF > $APP_INSTALL_CONTAINER/.env
+DISCORD_AUTH_TOKEN=$2
+CLOUDWATCH_ACCESS_KEY_ID=$3
+CLOUDWATCH_SECRET_ACCESS_KEY=$4
+CLOUDWATCH_REGION=$5
+EOF
+
+mkdir -p $APP_INSTALL_CONTAINER && mkdir -p $APP_UPLOAD_DIR
+node node_modules/pkg/lib-es5/bin.js lazrbot.js -t node10-linux-x64 --out-path $APP_INSTALL_CONTAINER
+cp -r $CODEDEPLOY_FILES/* $APP_INSTALL_CONTAINER && mv $APP_INSTALL_CONTAINER/appspec.yml $APP_BUILD_DIR
+cd $APP_BUILD_DIR && zip -r lazrbot.zip lazrbot appspec.yml && mv lazrbot.zip $APP_UPLOAD_DIR

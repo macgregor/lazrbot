@@ -4,9 +4,12 @@
   "description": "Custom bot for the Lazrcats discord server.",
   "main": "lazrbot.js",
   "author": "Matthew Stratton",
+  "license": "GPL-3.0",
   "dependencies": {
     "discord.io": "github:woor/discord.io#gateway_v6",
-    "winston": "^2.4.4"
+    "dotenv": "^6.2.0",
+    "winston": "^3.1.0",
+    "winston-aws-cloudwatch": "^3.0.0"
   },
   "devDependencies": {
     "pkg": "^4.3.5"

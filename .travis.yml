@@ -14,35 +14,39 @@ env:
   - secure: FtHwicp8oY8B2oAD2CJCP24kbz7ef2G6TDui/F1O018grh/4x8WX57D1WPzilvXoJ/Qz8dESxQF9ILhgi2QukFr+Q7lwzIS/PCooh/g2/MSKqYeWwrsG6V7v42SGDkuPYx/iHkjpqih53xLBHFFAiS8VYKYubeyn7s9V+F7Hix92CyOt9vSX7N/q4XSsPB1ayuiJXZVz1D90C8Kw7f2nC463BmKWANStMeczKzGHDAum4Kml3INd2dWHBfz755eYuLMUHFiCjACneu0szQMogRnmQq/BgC59byD3IKTHF+MBGv2E8mI8h9bm79KPqXpnwxP5X026wNIOP0oY6iYjlWaQQWxHUSvLa8eOMZERWlLGaGMAvBJ6N3NmhJtBs6BUVgXIfdK0LFELNBeevijEAgiK2q+4it6FKohuXXsMtakTmhdnKPpn9FVQXYbZ114G/4nSdcmRKUygdszka4DEcfi1aWMTbRhqiff6n+5x/It/jOzOkMXsZ2/hdofrGyO51nmP51wHiP36tb8surDAuwMT0NlfculeSuY0VjnAzggbzZysZVNZRx/GXC9tdwjtpqcODMCdGCO/hUG/JyxsE8BbU1zJ3afEDeu6jBEK5ZD/CicX4IJev0NkBWbTpMnadcBBEW2zW2cASbuZ3DHGhrelvutOhGX8VkxsiNAx4VI=
   - secure: GpBNVkG9ox2vjn1WOF6P6OWCbxhwkbKwWOGT2oVkcwLDlW8anb+AQ/QxjLQXt29E9RCdAQG38LbYnNW/BWWdpDoTUnGvfGagwwDBMD6j7FQJPe8xnbmP89Hcoqaeh3QnHIWqaOC8Cgto4CoVqzTKNhjaOnHtabundNMEX4GnvQc7qV+3g2ykdr169yt8oeQB8PSfe5OlRCQU97+yy2Gy+WB6n27BYSxLUv5wtAwsdD8yDKZeZNnw6ZP6TniNoSn6c1lQLIY7gWEJALdzat8PMT+QOPjKWVAZwJbAQsxJkea6g+XrowzCA0lry84gcf3z/SKbOgcD0vR1YPKSt4354DgB1G53EiigBFnKV8ngCbo+PLtX7/9cenexg9h6I5FQSdjoJS7csTJCaXRZmf41RYepyrUvzeGdxNvKlznAOtJK2symy/z+g2GI1iqFFkKgwL4v2baJ2jREI1nDC9tfhuxd993h5fDrlYvV8RVrrfvRyCfGttXGzhFmy9FuChIcsbPY+YXbVfW7vM2d4sPRVV8rRWzKhEJrFfKfxt6E4+WstrgkCaFM9d4sCcZMRRXf6yIE/VqWqWvDX2ssn1Sz1CnUdNcszlTfgGiigValktUuHKCfvJi76vkzU8JbRsoWY98xrBqFvPVfyeUD5pK0u7fNDk2FPV6engbuX+43MlA=
   - secure: nZODV3fNQqc/nnZRunpXdQaW2oqY3vAJcYH9ZvZ8zEeP4MdIVGjzNfKjjAqx/JdabTZ90mynKOO2fmNmDVdPhS1T3ZzV/zFw/8Wf1mI/XQ3kRnhn/aiMNMf1P+6zmTL7fV2N1N4YCjPKUIoKeReHxTDl9C0f+wTOMAayK4LZUm9efVsNKqNnVad9u9K0w3KEE9HKOSua/ATmwQ3ukypv5FIsxQ40n3ixkTy/M1LrsNWksXuo/4IpX2oXCNn71dcaciy/Kp5eriD9GQJPCy4wRBaygmnTgNYcsGG4xdXt/pNyBJBrHWtLz98tr/xfTqVbikXkM2c14UOawqVF1hHyAgMNC7RT4Vp/eL+crzu5lMUULAsTo0yG5y8/RGZeMGrZng8wvLwXzazsbjtkF7fppbFQhNdkFoYuYir8Wvz69q6seL+xEDyOBUu5K1qXavMrwzuRhlPozgQHqSYjg0BTB8QejXucsVZzAQ5UB9rBnLAgPXg5KsSzYi18PKCX9t4r19RXHakpcdQw/utu/TZNQQJkf5+KRfrM17Cgzh5csqjA0j/1djfyrxM/ABuPkJrmrE4Jr7QzOmc2d7rF6agFe+jkOUNROV/QOKd2N3qZzDwGAJ+aBOlp6R47msx44t/uvNCOJNbB9k1c8zcXEKe/QiYp9hwDReVCOkyiy2aICo0=
+  - secure: ZS9rzYZPRqwnJOtxziYTDKumoQ4zoD96hcSwwaXEdkkEX2h05TyJd38bRtNEsn4WRkpdkV6fwEHjaPfOm88lRThcLvS9actjQ74JtUOYUes4haDjPvlIwfStjOJMZ0MLCBvL2He2qclGYnwJ1wJ/K2CjyBMskNJZLdZ56A6lSYVhr90NUBiA8WEjTNZaJc16sBLf55cIrgiWdhf69YM3FjsDc8POunAMUSyWKixXw7xt3pZDyEnRVoD/YAXiZ0z/Qk2VHYkrRmlX0rWU77yuoTD894EHfIN06O/plSim9GAiJy3Wz66RSMxyzKdVhap42I5qF4NvHvk18RBfFR2B9sPwu7fOEJ7iaTvaiK7k9Lq0VztWXcivqapy5BoiIgZYzilRUzpEEKuJ022UBeG+tvWOwmCHMVVtIt450cb3jexX1hAslzRjf7cxrjX3d9RZNVvfN+4D9848kgNl3zLLph1ZoP/k6byX2cND0OQ+o3IjGkMdXjclegywWr/9MciYHhgrXd3WGbH5+1gvqkBk+IHrKp2chXzrH0lbgv3BKpGji81GeZ7znmZrDRbk/RL2lBM1+gs8t5Av62Sfk9sBJAd/8TAIr0OV61uQRuLVrQY8zm7hBeP4TRowUZcGkVNcndjNLVZ+2zkp0GGXPpfDG78RffrLuyKX9JvLxXpHKRM=
+  - secure: E19/5QZASsQSkflVNJIroDvw1HyYqC4UDSi4PZhwanqR2IWUsYkKqXL2dwfVgesx6m2EiCjNDfT0LjtBteylgr28dhO3ZRi1UUolGPN1QHp5rOHAoZHBXQGpCJoa/tYZzrnBb9z73PLH4e4PdJSdsj66UrfoC2rw/GPavmKUxFXJpF6uCy72UuWBC3rL02sUpt33f0ToYKH9/zqLeeosQ1uA6H877SDOcKLH3h+ITQYCRhq0DKZIhEwd+CBEjNUFY/0GKHXHbL+Rpwb4MhXotRQRJ5XxvsTkeWj9Lr88kho/adL4g+Miu6vDL81kgi1z/lMLuP0ezeBiq9ydMzBNjX97wtFR/WjB5UHGCqc/ZrGiLihynuEnTlJq09LEx2Y8uRlTzkSp9tF2k4neQaLfAX+iEJxUvOZjcChAALzDf1WUpZgm/mV1NyN1y/p3N13q9LVPGZ4SRu6mRRygHjBsG4nlHg7fj4LN9ku163300BE977OzppLg8G5M5S06rt1eVMtyT1mmING3WNsMnuDWHwlCMufT43XaXgfiEMKQdIlr5lf/FSEMKhpX8iNc00nc+FMEta6onwtOwsD2j2oSyH0OxVNgcMtYRdaIKvuaybTjJKeCO88SqAlpJ4U4sHIq7yY181A22oFgtIUAUGeEzYMnz3YHxVECrNyy1GVQOi4=
+  - CLOUDWATCH_REGION=us-east-1
+  - APP_REGION=us-east-2
 stages:
-  - build
-  - deploy
+- build
+- deploy
 jobs:
   include:
-    - stage: build
-      name: "Build Project"
-      install: bash $TRAVIS_BUILD_DIR/ci/build $TRAVIS_BUILD_DIR $DISCORD_AUTH_TOKEN
-      script: skip
-      deploy:
-      - provider: s3
-        access_key_id: "$AWS_ACCESS_KEY"
-        secret_access_key: "$AWS_SECRET_KEY"
-        local_dir: $TRAVIS_BUILD_DIR/build/upload
-        skip_cleanup: true
-        bucket: com.github.macgregor.deployments
-        region: us-east-2
-    - stage: deploy
-      name: "Deploy to AWS"
-      install: skip
-      script: skip
-      deploy:
-      - provider: codedeploy
-        access_key_id: "$AWS_ACCESS_KEY"
-        secret_access_key: "$AWS_SECRET_KEY"
-        bucket: com.github.macgregor.deployments
-        key: lazrbot.zip
-        bundle_type: zip
-        application: lazrbot
-        deployment_group: lazrbot
-        region: us-east-2
-        wait_until_deployed: true
+  - stage: build
+    name: Build Project
+    install: bash $TRAVIS_BUILD_DIR/ci/build $TRAVIS_BUILD_DIR $DISCORD_AUTH_TOKEN $CLOUDWATCH_ACCESS_KEY_ID $CLOUDWATCH_SECRET_ACCESS_KEY $CLOUDWATCH_REGION
+    script: skip
+    deploy:
+    - provider: s3
+      access_key_id: "$AWS_ACCESS_KEY"
+      secret_access_key: "$AWS_SECRET_KEY"
+      local_dir: "$TRAVIS_BUILD_DIR/build/upload"
+      skip_cleanup: true
+      bucket: com.github.macgregor.deployments
+      region: "$APP_REGION"
+  - stage: deploy
+    name: Deploy to AWS
+    install: skip
+    script: skip
+    deploy:
+    - provider: codedeploy
+      access_key_id: "$AWS_ACCESS_KEY"
+      secret_access_key: "$AWS_SECRET_KEY"
+      bucket: com.github.macgregor.deployments
+      key: lazrbot.zip
+      bundle_type: zip
+      application: lazrbot
+      deployment_group: lazrbot
+      region: "$APP_REGION"
+      wait_until_deployed: true
