@@ -3,7 +3,6 @@ require('dotenv').config({ path: path.resolve(process.cwd(), 'env') })
 var Discord = require('discord.io');
 var winston = require('winston');
 var CloudWatchTransport = require('winston-aws-cloudwatch');
-
 var NODE_ENV = process.env.NODE_ENV || 'development';
 
 // your centralized logger object

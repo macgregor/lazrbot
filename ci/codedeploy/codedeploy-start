@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
+sudo systemctl daemon-reload
 sudo systemctl start lazrbot.service

@@ -8,7 +8,9 @@ User=ec2-user
 Group=ec2-user
 Type=simple
 ExecStart=/usr/local/bin/lazrbot/lazrbot
-Restart=on-failure
+WorkingDirectory=/usr/local/bin/lazrbot
+Restart=always
+TimeoutSec=5
 
 [Install]
 WantedBy=multi-user.target
