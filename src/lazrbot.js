@@ -1,45 +1,11 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(process.cwd(), 'env') })
-var Discord = require('discord.io');
-var winston = require('winston');
-var CloudWatchTransport = require('winston-aws-cloudwatch');
-var NODE_ENV = process.env.NODE_ENV || 'development';
-
-// your centralized logger object
-let logger = winston.createLogger({
-    transports: [new winston.transports.Console({
-         format: winston.format.combine(
-            winston.format.colorize({ all: true }),
-            winston.format.printf(item => `${item.timestamp} [${item.level}] - ${item.message}`),
-            winston.format.timestamp({
-                format: 'YYYY-MM-DD HH:mm:ss'
-            }))
-        })
-    ],
-    format: winston.format.combine(
-         winston.format.timestamp({
-           format: 'YYYY-MM-DD HH:mm:ss'
-         })
-    ),
-    exitOnError: false
-});
-
-logger.level = 'debug';
-var config = {
-  logGroupName: 'lazrbot-logs',
-  logStreamName: NODE_ENV,
-  createLogGroup: false,
-  createLogStream: true,
-  submissionInterval: 5000,
-  submissionRetryCount: 3,
-  awsConfig: {
-    accessKeyId: process.env.CLOUDWATCH_ACCESS_KEY_ID,
-    secretAccessKey: process.env.CLOUDWATCH_SECRET_ACCESS_KEY,
-    region: process.env.CLOUDWATCH_REGION
-  }
+if(!process.env.DISCORD_AUTH_TOKEN){
+  throw Error ('No auth token to connect to discord server. Set the DISCORD_AUTH_TOKEN env variable')
 }
 
-if (NODE_ENV != 'development') logger.add(new CloudWatchTransport(config));
+var Discord = require('discord.io');
+var logger = require('./logging.js').getInstance();
 
 // Initialize Discord Bot
 var bot = new Discord.Client({
