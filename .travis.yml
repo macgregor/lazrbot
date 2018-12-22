@@ -33,12 +33,12 @@ jobs:
       secret_access_key: "$AWS_SECRET_KEY"
       local_dir: "$TRAVIS_BUILD_DIR/build/upload"
       skip_cleanup: true
-      bucket: com.github.macgregor.deployments
+      bucket: com.github.macgregor.deploy
       region: "$APP_REGION"
     - provider: codedeploy
       access_key_id: "$AWS_ACCESS_KEY"
       secret_access_key: "$AWS_SECRET_KEY"
-      bucket: com.github.macgregor.deployments
+      bucket: com.github.macgregor.deploy
       key: lazrbot.zip
       bundle_type: zip
       application: lazrbot
