@@ -18,14 +18,14 @@ env:
   - secure: E19/5QZASsQSkflVNJIroDvw1HyYqC4UDSi4PZhwanqR2IWUsYkKqXL2dwfVgesx6m2EiCjNDfT0LjtBteylgr28dhO3ZRi1UUolGPN1QHp5rOHAoZHBXQGpCJoa/tYZzrnBb9z73PLH4e4PdJSdsj66UrfoC2rw/GPavmKUxFXJpF6uCy72UuWBC3rL02sUpt33f0ToYKH9/zqLeeosQ1uA6H877SDOcKLH3h+ITQYCRhq0DKZIhEwd+CBEjNUFY/0GKHXHbL+Rpwb4MhXotRQRJ5XxvsTkeWj9Lr88kho/adL4g+Miu6vDL81kgi1z/lMLuP0ezeBiq9ydMzBNjX97wtFR/WjB5UHGCqc/ZrGiLihynuEnTlJq09LEx2Y8uRlTzkSp9tF2k4neQaLfAX+iEJxUvOZjcChAALzDf1WUpZgm/mV1NyN1y/p3N13q9LVPGZ4SRu6mRRygHjBsG4nlHg7fj4LN9ku163300BE977OzppLg8G5M5S06rt1eVMtyT1mmING3WNsMnuDWHwlCMufT43XaXgfiEMKQdIlr5lf/FSEMKhpX8iNc00nc+FMEta6onwtOwsD2j2oSyH0OxVNgcMtYRdaIKvuaybTjJKeCO88SqAlpJ4U4sHIq7yY181A22oFgtIUAUGeEzYMnz3YHxVECrNyy1GVQOi4=
   - CLOUDWATCH_REGION=us-east-1
   - APP_REGION=us-east-1
+before_install:
+- cd $TRAVIS_BUILD_DIR/src
 stages:
 - deploy
 jobs:
   include:
   - stage: deploy
     name: Build and Deploy to AWS
-    before_install:
-    - cd $TRAVIS_BUILD_DIR/src
     script: bash $TRAVIS_BUILD_DIR/ci/build $TRAVIS_BUILD_DIR $DISCORD_AUTH_TOKEN $CLOUDWATCH_ACCESS_KEY_ID $CLOUDWATCH_SECRET_ACCESS_KEY $CLOUDWATCH_REGION
     deploy:
     - provider: s3
