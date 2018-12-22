@@ -16,6 +16,6 @@ CLOUDWATCH_REGION=$5
 NODE_ENV=prod
 EOF
 
-node src/node_modules/pkg/lib-es5/bin.js src/lazrbot.js -t node10-linux-x64 --out-path $APP_INSTALL_CONTAINER || exit 1
+node $APP_PROJECT_DIR/src/node_modules/pkg/lib-es5/bin.js $APP_PROJECT_DIR/src/lazrbot.js -t node10-linux-x64 --out-path $APP_INSTALL_CONTAINER || exit 1
 cp -r $CODEDEPLOY_FILES/* $APP_INSTALL_CONTAINER && mv $APP_INSTALL_CONTAINER/appspec.yml $APP_BUILD_DIR
 cd $APP_BUILD_DIR && zip -r lazrbot.zip lazrbot appspec.yml && mv lazrbot.zip $APP_UPLOAD_DIR
