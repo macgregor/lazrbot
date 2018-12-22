@@ -24,6 +24,8 @@ jobs:
   include:
   - stage: deploy
     name: Build and Deploy to AWS
+    before_install:
+    - cd $TRAVIS_BUILD_DIR/src
     script: bash $TRAVIS_BUILD_DIR/ci/build $TRAVIS_BUILD_DIR $DISCORD_AUTH_TOKEN $CLOUDWATCH_ACCESS_KEY_ID $CLOUDWATCH_SECRET_ACCESS_KEY $CLOUDWATCH_REGION
     deploy:
     - provider: s3
