@@ -1,13 +1,20 @@
 {
   "name": "lazrbot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Custom bot for the Lazrcats discord server.",
   "main": "lazrbot.js",
   "author": "Matthew Stratton",
-  "license": "GPL-3.0",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/macgregor/lazrbot",
+  "bugs": "https://github.com/macgregor/lazrbot/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/macgregor/lazrbot.git"
+  },
   "dependencies": {
     "discord.io": "github:woor/discord.io#gateway_v6",
     "dotenv": "^6.2.0",
+    "dynamodb": "^1.1.2",
     "winston": "^3.1.0",
     "winston-aws-cloudwatch": "^3.0.0"
   },
